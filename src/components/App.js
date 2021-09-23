@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import unsplash from '../api/unsplash';
-import { path } from 'ramda';
 import ImageList from './ImageList';
 import SearchBar from './SearchBar';
 
@@ -11,8 +10,7 @@ export default class App extends Component {
         const response = await unsplash.get('/search/photos', {
             params: { query: term }
         });
-        let images = response.data.results.map(path(['urls', 'small']));
-        this.setState({ images });
+        this.setState({ images: response.data.results });
     };
     render() {
         return (
