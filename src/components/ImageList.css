@@ -1,0 +1,12 @@
+.images-list {
+    margin: 10px 10px 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.image-list img {
+    display: block;
+}

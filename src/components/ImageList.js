@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react';
+import './ImageList.css';
 
-export default class ImageList extends Component {
-    render() {
-        return (
-            <div>
-                ImageList 
-            </div>
-        );
-    }
+export default function ImageList({ images }) {
+    const renderImages = () => {
+        return images.map((url) => {
+            return <img alt="" key={url} src={url}></img>;
+        });
+    };
+
+    return <div className="images-list">{renderImages()}</div>;
 }
